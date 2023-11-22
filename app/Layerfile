@@ -1,3 +1,0 @@
-FROM ./Layerfile
-
-RUN pytest
