@@ -4,7 +4,15 @@ from .models import Customer, CulturalAttraction, Destination, TourPackage, Book
 # Register your models here.
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ['user', 'phone_number', 'created_at', 'updated_at']
+    list_display = ['user', 'get_email', 'get_phone_number', 'created_at', 'updated_at']
+
+    def get_email(self, obj):
+        return obj.user.email
+    get_email.short_description = 'Email'
+
+    def get_phone_number(self, obj):
+        return obj.user.phonenumber
+    get_phone_number.short_description = 'Phone Number'
 
 @admin.register(CulturalAttraction)
 class CulturalAttractionAdmin(admin.ModelAdmin):

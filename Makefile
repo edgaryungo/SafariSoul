@@ -21,7 +21,8 @@ migrate:
 
 .PHONY: startapp
 startapp:
-	docker-compose run --rm app sh -c "python manage.py startapp $(name)"
+	@read -p "Enter app name: " INPUT; \
+	docker-compose run --rm app sh -c "python manage.py startapp '$$INPUT'"
 
 .PHONY: createsuperuser
 createsuperuser:
