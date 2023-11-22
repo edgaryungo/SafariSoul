@@ -6,10 +6,10 @@ from safari.models import Customer, CulturalAttraction, Destination, TourPackage
 
 @pytest.mark.django_db
 def test_customer_model():
-    user = User.objects.create(username='testuser')
-    customer = Customer.objects.create(user=user, phone_number='1234567890')
+    user = User.objects.create(username='testuser', phonenumber='1234567890')
+    customer = Customer.objects.create(user=user)
     assert customer.user == user
-    assert customer.phone_number == '1234567890'
+    assert customer.user.phonenumber == '1234567890'
     assert str(customer) == f'{user}'
 
 @pytest.mark.django_db
@@ -47,8 +47,8 @@ def test_tour_package_model():
 
 @pytest.mark.django_db
 def test_booking_model():
-    user = User.objects.create(username='testuser')
-    customer = Customer.objects.create(user=user, phone_number='1234567890')
+    user = User.objects.create(username='testuser', phonenumber='1234567890')
+    customer = Customer.objects.create(user=user)
     destination = Destination.objects.create(title='Destination', description='Test destination')
     tour_package = TourPackage.objects.create(title='Package', description='Test package', destination=destination, price=100.00, start_date='2022-01-01', duration_days=5, duration_nights=4)
     booking = Booking.objects.create(customer=customer, tour_package=tour_package, booking_date='2022-01-01', num_of_people=2)
