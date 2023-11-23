@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User 
+from .models import User, UserProfile
 
 # Register your models here.
 @admin.register(User)
@@ -15,3 +15,10 @@ class UserAdmin(admin.ModelAdmin):
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'bio')
+    search_fields = ('user',)
+    ordering = ('user',)
+    readonly_fields = ('user',)
