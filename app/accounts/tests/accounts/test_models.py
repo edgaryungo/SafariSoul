@@ -1,5 +1,5 @@
 import pytest
-from accounts.models import User
+from accounts.models import User, UserProfile
 
 @pytest.mark.django_db
 class TestUserModel:
@@ -22,4 +22,13 @@ class TestUserModel:
         # Test user string representation
         user = User.objects.create_user(**self.user_data)
         assert str(user) == self.user_data['username']
+
+    def test_user_profile(self):
+        # Test user profile and the str representation of UserProfile model
+        user = User.objects.create_user(**self.user_data)
+        # create profile using signal
+        profile = user.userprofile
+        assert profile.user == user
+        assert str(profile) == f"{user.username}'s Profile"
+        
 
