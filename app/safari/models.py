@@ -1,13 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
 from accounts.models import User
-# from django.contrib.auth.models import User
 import uuid
 
 #customer model inherits from User
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # profile_picture = models.ImageField(upload_to='profile_pictures', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -19,7 +17,7 @@ class Customer(models.Model):
 class CulturalAttraction(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    # image = models.ImageField(upload_to='cultural_attraction', blank=True)
+    image = models.ImageField(upload_to='cultural_attraction/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -30,7 +28,7 @@ class CulturalAttraction(models.Model):
 class Destination(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    # image = models.ImageField(upload_to='destinations', blank=True)
+    image = models.ImageField(upload_to='destinations/', blank=True)
     cultural_attraction = models.ForeignKey(CulturalAttraction, on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
