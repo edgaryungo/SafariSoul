@@ -25,7 +25,13 @@ class DestinationSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        representation['cultural_attraction'] = instance.cultural_attraction.title
+        cultural_attraction = instance.cultural_attraction
+
+        if cultural_attraction:
+            representation['cultural_attraction'] = cultural_attraction.title
+        else:
+            representation['cultural_attraction'] = None
+
         return representation
 
 class TourPackageSerializer(serializers.ModelSerializer):

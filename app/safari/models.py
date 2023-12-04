@@ -28,7 +28,7 @@ class CulturalAttraction(models.Model):
 class Destination(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='destinations/', blank=True)
+    image = models.ImageField(upload_to='destinations/')
     cultural_attraction = models.ForeignKey(CulturalAttraction, on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(unique=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

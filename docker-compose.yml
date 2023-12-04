@@ -1,13 +1,26 @@
 version: '3.9'
 
 services:
+  frontend:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile-front
+    ports:
+      - 3000:3000
+    command: sh -c "npm run dev -- --host"
+    volumes:
+      - ./frontend/safari_soul:/app
+
   app:
     build:
       context: .
+      dockerfile: Dockerfile
     command: sh -c "python manage.py runserver 0.0.0.0:8000"
     user: "django_user"
     ports:
       - 8000:8000
     volumes:
       - ./app:/app
+
    
