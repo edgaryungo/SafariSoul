@@ -19,4 +19,4 @@ RUN adduser --disabled-password --gecos "" --no-create-home django_user
 
 USER django_user
 
-CMD ["uwsgi", "--socket", ":9000", "--workers", "4", "--master", "--enable-threads", "--module", "app.wsgi"]
+# CMD ["uwsgi", "--socket", ":9000", "--workers", "4", "--master", "--enable-threads", "--module", "app.wsgi"]

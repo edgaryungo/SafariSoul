@@ -6,6 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: always
+    command: gunicorn app.wsgi --bind 0.0.0.0:8000
+    ports:
+      - 8000:8000
     user: "django_user"
     environment:
       - DJANGO_DEBUG=0
