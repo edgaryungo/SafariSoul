@@ -14,9 +14,9 @@
 
 <main class="flex flex-col flex-1 p-4">
 	<section id="Destination" class="py-20 lg:py-32 flex flex-col gap-24">
-		<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10" data-sveltekit-prefetch>
 			{#each $Destinations as destination}
-				<a href={`/destinations/${destination.id}`}>
+				<a href={`/destinations/${destination.slug}`}>
 					<div class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200">
 						
 						<img src="{destination.image}" alt="image">

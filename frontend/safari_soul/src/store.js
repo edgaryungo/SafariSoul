@@ -2,6 +2,7 @@ import {writable} from 'svelte/store'
 
 export const CulturalAttraction = writable([])
 export const Destinations = writable([])
+export const Destination = writable([])
 export const Packages = writable([])
 export const Benefits = writable([
     {

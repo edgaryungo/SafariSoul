@@ -21,22 +21,27 @@ def apiOverview(request):
 class CulturalAttractionViewSet(viewsets.ModelViewSet):
     queryset = CulturalAttraction.objects.all()
     serializer_class = CulturalAttractionSerializer
+    lookup_field = 'slug'
 
 class DestinationViewSet(viewsets.ModelViewSet):
     queryset = Destination.objects.all()
     serializer_class = DestinationSerializer
+    lookup_field = 'slug'
 
 class TourPackageViewSet(viewsets.ModelViewSet):
     queryset = TourPackage.objects.all()
     serializer_class = TourPackageSerializer
+    lookup_field = 'slug'
     
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
+    lookup_field = 'slug'
 
 class BookingViewSet(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    lookup_field = 'slug'
 
 
 # external apis for cultural attraction and destination

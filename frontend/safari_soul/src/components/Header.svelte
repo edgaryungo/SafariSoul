@@ -13,9 +13,9 @@
 	class={'sticky z-[10] top-0 duration-200 px-6 flex items-center justify-between border border-solid' +
 		(y > 0 ? 'py-4 bg-slate-950 border-violet-950' : 'py-6 bg-transparent border-transparent')}
 >
-	<h1 class="font-medium">
-		<b class="font-bold poppins">Safari</b>Soul
-	</h1>
+	<a href="/" class="font-medium">
+		<b class="font-bold text-xl poppins">Safari</b>Soul
+	</a>
 	<div class="sm:flex items-center gap-4 hidden">
 		{#each tabs as tab, index}
 			<a href={tab.link} class="duration-200 hover:text-violet-400">
@@ -24,8 +24,7 @@
 		{/each}
 
 		<a
-			href="#"
-			target="_blank"
+			href="/"
 			class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950"
 		>
 			<div
