@@ -1,3 +1,3 @@
 export const prerender = {
-    entries: ['/destinations/[slug]'],
+    entries: ['/', '/contact', '/culture', '/destinations', '/destinations/[slug]'],
   };
