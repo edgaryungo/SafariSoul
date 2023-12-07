@@ -1,7 +1,4 @@
-export default {
-    prerender: {
-      entries: ['/', '/culture', '/destinations', '/destinations/[slug]'],
-      fallback: true,
-    },
+export const prerender = {
+    entries: ['/', '/contact', '/culture', '/destinations', '/destinations/[slug]'],
+    fallback: true,
   };
-  
