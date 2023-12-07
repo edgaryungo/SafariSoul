@@ -19,7 +19,7 @@
 				<a href={`/destinations/${destination.slug}`}>
 					<div class="p-4 sm:p-6 md:p-8 flex flex-col gap-4 rounded-lg border border-solid border-violet-700 text-center group cursor-pointer hover:border-violet-400 duration-200">
 						
-						<img src="{destination.image}" alt="image">
+						<img src="{destination.image}" alt="">
 						<p class="text-base sm:text-lg md:text-xl">
 							{destination.title}
 						</p>
