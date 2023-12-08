@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
 	
 	onMount(async function () {
-		const endpoint = 'http://0.0.0.0/api/cultural_attractions/'
+		const endpoint = 'http://100.25.30.17/api/cultural_attractions/'
 		const response = await fetch(endpoint)
 		const data = await response.json()
 		// console.log(data)
